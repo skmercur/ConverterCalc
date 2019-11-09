@@ -22,6 +22,13 @@ export default class Home extends Component {
     }
     this.setState({ TextToConvert: output });
   };
+  StringToOcta = text => {
+    let output = '';
+    for (var i = 0; i < text.length; i++) {
+      output += text[i].charCodeAt(0).toString(8) + ' ';
+    }
+    this.setState({ TextToConvert: output });
+  };
   componentDidMount() { }
   render() {
     return (
@@ -32,6 +39,7 @@ export default class Home extends Component {
           onChangeText={text => {
             this.StringToBin(text);
             this.StringToHexa(text);
+            this.StringToOcta(text);
           }}
           bordered></Textarea>
       </Container>
