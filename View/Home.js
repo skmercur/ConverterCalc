@@ -15,9 +15,7 @@ export default class Home extends Component {
     }
     this.setState({TextToConvert: output});
   };
-  componentDidMount() {
-    this.StringToBin('لوحة المفاتيح العربية');
-  }
+  componentDidMount() {}
   render() {
     return (
       <Container>
@@ -26,7 +24,8 @@ export default class Home extends Component {
           rowSpan={20}
           onChangeText={text => {
             this.StringToBin(text);
-          }}></Textarea>
+          }}
+          bordered></Textarea>
       </Container>
     );
   }
