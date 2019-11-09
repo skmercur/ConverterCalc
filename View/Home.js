@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {View, Text} from 'react-native';
-import {Textarea, Container} from 'native-base';
+import React, { Component } from 'react';
+import { View, Text } from 'react-native';
+import { Textarea, Container } from 'native-base';
 export default class Home extends Component {
   constructor(props) {
     super(props);
@@ -13,9 +13,16 @@ export default class Home extends Component {
     for (var i = 0; i < text.length; i++) {
       output += text[i].charCodeAt(0).toString(2) + ' ';
     }
-    this.setState({TextToConvert: output});
+    this.setState({ TextToConvert: output });
   };
-  componentDidMount() {}
+  StringToHexa = text => {
+    let output = '';
+    for (var i = 0; i < text.length; i++) {
+      output += text[i].charCodeAt(0).toString(16) + ' ';
+    }
+    this.setState({ TextToConvert: output });
+  };
+  componentDidMount() { }
   render() {
     return (
       <Container>
@@ -24,6 +31,7 @@ export default class Home extends Component {
           rowSpan={20}
           onChangeText={text => {
             this.StringToBin(text);
+            this.StringToHexa(text);
           }}
           bordered></Textarea>
       </Container>
