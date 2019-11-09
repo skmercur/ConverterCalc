@@ -1,9 +1,15 @@
+<<<<<<< HEAD
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { Textarea, Container } from 'native-base';
 
 
 
+=======
+import React, {Component} from 'react';
+import {View, Text} from 'react-native';
+import {Textarea, Container} from 'native-base';
+>>>>>>> 6888fe63e5b90edf7b70a3325dd7745d4a6ba281
 export default class Home extends Component {
   constructor(props) {
     super(props);
@@ -18,23 +24,23 @@ export default class Home extends Component {
     for (var i = 0; i < text.length; i++) {
       output += text[i].charCodeAt(0).toString(2) + ' ';
     }
-    this.setState({ TextToConvertBin: output });
+    this.setState({TextToConvertBin: output});
   };
   StringToHexa = text => {
     let output = '';
     for (var i = 0; i < text.length; i++) {
       output += text[i].charCodeAt(0).toString(16) + ' ';
     }
-    this.setState({ TextToConvertHex: output });
+    this.setState({TextToConvertHex: output});
   };
   StringToOcta = text => {
     let output = '';
     for (var i = 0; i < text.length; i++) {
       output += text[i].charCodeAt(0).toString(8) + ' ';
     }
-    this.setState({ TextToConvertOct: output });
+    this.setState({TextToConvertOct: output});
   };
-  componentDidMount() { }
+  componentDidMount() {}
   render() {
     return (
       <Container>
