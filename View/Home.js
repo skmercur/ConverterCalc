@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { Textarea, Container } from 'native-base';
+
+
+
 export default class Home extends Component {
   constructor(props) {
     super(props);
@@ -39,7 +42,7 @@ export default class Home extends Component {
           onChangeText={text => {
             this.StringToBin(text);
             this.StringToHexa(text);
-            this.StringToOcta(text);
+            //  this.StringToOcta(text);
           }}
           bordered></Textarea>
       </Container>
