@@ -1,8 +1,9 @@
-import React, {Component} from 'react';
-import {View, Text} from 'react-native';
-import {Textarea, Container} from 'native-base';
+import React, { Component } from 'react';
+import { View, Text } from 'react-native';
+import { Textarea, Container } from 'native-base';
 
 export default class Home extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -11,28 +12,40 @@ export default class Home extends Component {
       TextToConvertOct: '',
     };
   }
-  StringToBin = text => {
-    let output = '';
-    for (var i = 0; i < text.length; i++) {
-      output += text[i].charCodeAt(0).toString(2) + ' ';
-    }
-    this.setState({TextToConvertBin: output});
-  };
   StringToHexa = text => {
     let output = '';
     for (var i = 0; i < text.length; i++) {
       output += text[i].charCodeAt(0).toString(16) + ' ';
     }
-    this.setState({TextToConvertHex: output});
+    this.setState({ TextToConvertHexa: output });
+  };
+
+  StringToBin = text => {
+    let output = '';
+    /* for (var i = 0; i < text.length; i++) {
+    //   output += text[i].charCodeAt(0).toString(16) + ' ';
+     }*/
+
+    if (isNaN(text)) {
+      for (var i = 0; i < text.length; i++) {
+        output += text[i].charCodeAt(0).toString(2) + ' ';
+      }
+    } else {
+      let temp = parseInt(text, nbr);
+      output = (temp >>> 0).toString(2);
+
+    }
+
+    this.setState({ TextToConvertBin: output });
   };
   StringToOcta = text => {
     let output = '';
     for (var i = 0; i < text.length; i++) {
       output += text[i].charCodeAt(0).toString(8) + ' ';
     }
-    this.setState({TextToConvertOct: output});
+    this.setState({ TextToConvertOct: output });
   };
-  componentDidMount() {}
+  componentDidMount() { }
   render() {
     return (
       <Container>
