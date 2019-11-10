@@ -14,8 +14,22 @@ export default class Home extends Component {
   }
   StringToHexa = text => {
     let output = '';
+    let numbers = '';
+    let setHas = false;
     for (var i = 0; i < text.length; i++) {
+<<<<<<< HEAD
       output += text[i].charCodeAt(0).toString(16) + ' ';
+=======
+      if (/^\d+$/.test(text[i].charCodeAt(0).toString())) {
+setScanOn = true;
+      }else{
+        setScanOn = false;
+      }
+      if(setScanOn){
+        for(var j = 0; i < )
+      }
+      output += text[i].charCodeAt(0).toString(2) + ' ';
+>>>>>>> eab8580175c77cd95621a983dcdea9594fdd7743
     }
     this.setState({ TextToConvertHexa: output });
   };
